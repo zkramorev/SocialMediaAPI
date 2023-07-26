@@ -31,6 +31,13 @@ class IncorrectTokenFormatException(AppException):
 class UserIsNotPresentException(AppException):
     status_code=status.HTTP_401_UNAUTHORIZED
 
+class CannotSendRequestToYourself(AppException):
+    status_code=status.HTTP_405_METHOD_NOT_ALLOWED
+    detail="Нельзя отправить заявку самому себе"
+
+class UserNotFound(AppException):
+    status_code=status.HTTP_400_BAD_REQUEST
+    detail="Пользователь не найден"
 
 
 class CannotAddDataToDatabase(AppException):

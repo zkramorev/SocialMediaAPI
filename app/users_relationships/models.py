@@ -1,6 +1,6 @@
 import enum
-from sqlalchemy import Column, ForeignKey, Integer, Enum
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, ForeignKey, Integer, String
+from dataclasses import dataclass
 
 from app.database import Base
 
@@ -11,15 +11,10 @@ class UserRelationship(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     user_from_id = Column(Integer, ForeignKey("users.id"),  nullable=False)
     user_to_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    relationship_status = relationship("RelationshipTypes", back_populates="users_relationships")
+    relationship_status = Column(String, nullable=False)
 
-class RelationshipTypes(enum.Enum):
-    FRIENDS = "friends"
-    SUBSCRIBER = "subscriber"
-    SEND_FRIEND_REQUEST = "send_friends_request"
-
-class RelationshipType(Base):
-    __tablename__ = "relationship_types"
-    
-    id = Column(Integer, primary_key=True, nullable=False)
-    relationship_status = Column(Enum(RelationshipTypes), unique=True, nullable=False)
+@dataclass
+class RelationshipTypes:
+    FRIENDS: str = "friends"
+    HAVE_FRIEND_REQUEST: str = "have_friends_request"
+    SEND_FRIEND_REQUEST: str = "send_friends_request"
