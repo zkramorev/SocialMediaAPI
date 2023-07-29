@@ -1,16 +1,17 @@
 import asyncio
-import pytest
 import json
 
-from sqlalchemy import insert
-from app.database import Base, async_session_maker, engine
-from app.config import settings
-from app.main import app as fastapi_app
-
+import pytest
 from fastapi.testclient import TestClient
 from httpx import AsyncClient
+from sqlalchemy import insert
+
+from app.config import settings
+from app.database import Base, async_session_maker, engine
+from app.main import app as fastapi_app
 from app.users.models import User
 from app.users_relationships.models import UserRelationship
+
 
 @pytest.fixture(autouse=True, scope="session")
 async def prepare_db():
@@ -36,6 +37,7 @@ async def prepare_db():
 
         await session.commit()
 
+
 # Взято из документации к pytest-asyncio
 @pytest.fixture(scope="session")
 def event_loop(request):
@@ -43,6 +45,7 @@ def event_loop(request):
     loop = asyncio.get_event_loop_policy().new_event_loop()
     yield loop
     loop.close()
+
 
 @pytest.fixture(scope="function")
 async def ac():

@@ -4,7 +4,6 @@ from sqlalchemy.orm import DeclarativeBase
 
 from app.config import settings
 
-
 DATABASE_PARAMS = {}
 
 if settings.MODE == "TEST":
@@ -18,6 +17,7 @@ else:
 engine = create_async_engine(DATABASE_URL, **DATABASE_PARAMS)
 
 async_session_maker = async_sessionmaker(engine, expire_on_commit=False)
+
 
 class Base(DeclarativeBase):
     pass

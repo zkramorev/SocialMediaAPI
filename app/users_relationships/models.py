@@ -1,6 +1,6 @@
-import enum
-from sqlalchemy import Column, ForeignKey, Integer, String
 from dataclasses import dataclass
+
+from sqlalchemy import Column, ForeignKey, Integer, String
 
 from app.database import Base
 
@@ -9,9 +9,10 @@ class UserRelationship(Base):
     __tablename__ = "users_relationships"
 
     id = Column(Integer, primary_key=True, nullable=False)
-    user_from_id = Column(Integer, ForeignKey("users.id"),  nullable=False)
+    user_from_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     user_to_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     relationship_status = Column(String, nullable=False)
+
 
 @dataclass
 class RelationshipTypes:
