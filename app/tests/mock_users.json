@@ -1,0 +1,27 @@
+[
+    {
+        "email": "test1@test.com",
+        "hashed_password": "$2b$12$ib8N/MddMjSxNs4UOF69c.KuO4CyglQHcNATYpHcKJJn5rbltYNFG",
+        "user_name": "test_user_1"
+    },
+    {
+        "email": "test2@test.com",
+        "hashed_password": "$2b$12$SwAOsDqK7tjnvIcjlTAUvuX6K4xv/zUvqp8Y2oSCtqVv4f/XCB2Bi",
+        "user_name": "test_user_2"
+    },
+    {
+        "email": "test3@test.com",
+        "hashed_password": "$2b$13$SwAOsDqK7tjnvIcjlTAUvuX6K4xv/zUvqp8YasdfatqVv4f/XCB2Bi",
+        "user_name": "test_user_3"
+    },
+    {
+        "email": "test4@test.com",
+        "hashed_password": "$2b$14$SwAOsDqK7tjnvIcjlTAUvuX6K4xv/zUvqp8Y2oSCtqVasdfXCB2Bi",
+        "user_name": "test_user_4"
+    },
+    {
+        "email": "test5@test.com",
+        "hashed_password": "$2b$15$SwAOsDqK7tjnvIcjlTAUvuX6K4xv/zUvqp8Y2oSCtqVv4f/XCasdfBi",
+        "user_name": "test_user_5"
+    }
+]
