@@ -8,8 +8,3 @@ app = FastAPI()
 app.include_router(router_users)
 app.include_router(router_request)
 app.include_router(router_status)
-
-
-@app.get("/test")
-def test():
-    return "TEST!"
