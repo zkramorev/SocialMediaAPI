@@ -28,6 +28,7 @@ class BaseDAO:
             await session.execute(query)
             await session.commit()
     
+    
     @classmethod
     async def find_all(cls, selected_columns=None, **filter_by):
         async with async_session_maker() as session:
