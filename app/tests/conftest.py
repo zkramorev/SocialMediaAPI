@@ -1,14 +1,13 @@
 import asyncio
+import pytest
 import json
 
-import pytest
-from fastapi.testclient import TestClient
-from httpx import AsyncClient
 from sqlalchemy import insert
-
-from app.config import settings
 from app.database import Base, async_session_maker, engine
+from app.config import settings
 from app.main import app as fastapi_app
+
+from httpx import AsyncClient
 from app.users.models import User
 from app.users_relationships.models import UserRelationship
 
