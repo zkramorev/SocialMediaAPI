@@ -1,0 +1,25 @@
+version: '3.11'
+services:
+  db:
+    image: postgres:15
+    container_name: app_db
+    env_file:
+      - .env-non-dev
+    ports:
+      - 5432:5432
+  redis:
+    image: redis:7
+    container_name: app_redis
+   
+  app:
+    build: 
+      context: .
+    container_name: social_media_api_app
+    env_file:
+      - .env-non-dev
+    depends_on:
+      - db
+      - redis
+    command: ["/social_media_api/docker/app.sh"]
+    ports:
+      - 9000:8000
