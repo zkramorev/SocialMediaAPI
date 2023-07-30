@@ -1,5 +1,5 @@
 # SocialMediaAPI
-## REST API для работы "социальной сети"
+## REST API для работы «социальной сети»
 <image src="https://graphicsland.ru/wp-content/uploads/social_icons_circle_color.png" alt="картинка" width="410" height="270">
 
 ### Используемый стек технологий
@@ -37,7 +37,7 @@
 http://zkramorev.ru/docs
 ## Установка и запуск на локальной машине
 ### **С** использованием Docker Compose
-1. `git clone git@github.com:zkramorev/SocialMediaAPI.git`
+1. ```git clone git@github.com:zkramorev/SocialMediaAPI.git```
 2. ```cd SocialMediaAPI```
 3. ```docker compose build```
 4. ```docker compose up```
@@ -50,3 +50,7 @@ http://zkramorev.ru/docs
 5. ```pip install -r requirements.txt```
 6. ```uvicorn app.main:app```
 7. Переходим на [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+
+>Все глобальное начинается с мелочей.
+>Конфуций
