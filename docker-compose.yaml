@@ -1,5 +1,16 @@
-version: '3.11'
+version: '3.8'
 services:
+  nginx:
+    build: 
+      context: .
+      dockerfile: "Dockerfile.nginx"
+    container_name: app_nginx
+    ports:
+      - 80:80
+      - 443:443
+    links:
+     - app
+
   db:
     image: postgres:15
     container_name: app_db
@@ -21,5 +32,5 @@ services:
       - db
       - redis
     command: ["/social_media_api/docker/app.sh"]
-    ports:
-      - 9000:8000
+    # ports:
+    #   - 9000:8000
