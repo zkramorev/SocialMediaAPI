@@ -128,7 +128,7 @@ async def reject_request(
         )
 
 
-@router.put("/deleting_friend")
+@router.delete("/deleting_friend")
 async def delete_friend(
     friend_name: str, current_user: User = Depends(get_current_user)
 ):
