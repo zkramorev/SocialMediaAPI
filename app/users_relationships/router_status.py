@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends
+from fastapi_cache.decorator import cache
 
 from app.exceptions import CannotSendRequestToYourself, UserNotFound
 from app.users.dao import UserDAO
@@ -11,6 +12,7 @@ router = APIRouter(prefix="/statuses", tags=["User Statuses"])
 
 
 @router.get("/incoming")
+@cache(expire=30)
 async def get_subscribers(current_user: User = Depends(get_current_user)):
     subscribers_names = await UserRelDAO.get_requests(
         user_from_id=current_user.id,
@@ -20,6 +22,7 @@ async def get_subscribers(current_user: User = Depends(get_current_user)):
 
 
 @router.get("/outgoing")
+@cache(expire=30)
 async def get_outgoing_requests(current_user: User = Depends(get_current_user)):
     outgoing_user_requests_names = await UserRelDAO.get_requests(
         user_from_id=current_user.id,
@@ -29,6 +32,7 @@ async def get_outgoing_requests(current_user: User = Depends(get_current_user)):
 
 
 @router.get("/friends")
+@cache(expire=30)
 async def get_outgoing_requests(current_user: User = Depends(get_current_user)):
     friends_names = await UserRelDAO.get_requests(
         user_from_id=current_user.id, relationship_status=RelationshipTypes.FRIENDS
