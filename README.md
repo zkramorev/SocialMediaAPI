@@ -34,7 +34,7 @@
 становятся друзьями
 
 ## Документация (с возможностью делать запросы)
-http://zkramorev.ru/docs
+[zkramorev.ru/SocialMediaAPI](http://zkramorev.ru/SocialMediaAPI)
 ## Установка и запуск на локальной машине
 ### **С** использованием Docker Compose
 1. ```git clone git@github.com:zkramorev/SocialMediaAPI.git```
