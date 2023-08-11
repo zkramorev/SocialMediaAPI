@@ -42,14 +42,6 @@
 3. ```docker compose build```
 4. ```docker compose up```
 5. Переходим на [http://127.0.0.1/docs](http://127.0.0.1/docs) 
-### **Без** использования Docker Compose
-1. ```git clone git@github.com:zkramorev/SocialMediaAPI.git```
-2. ```cd SocialMediaAPI```
-3. ```python3 -m venv venv ```
-4. ```. venv/bin/activate```
-5. ```pip install -r requirements.txt```
-6. ```uvicorn app.main:app```
-7. Переходим на [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 
 >Все глобальное начинается с мелочей.
