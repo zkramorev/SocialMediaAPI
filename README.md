@@ -1,4 +1,4 @@
-# SocialMediaAPI
+# SocialMediaAPI (НА ДОРАБОТКЕ)
 ## REST API для работы «социальной сети»
 <image src="https://graphicsland.ru/wp-content/uploads/social_icons_circle_color.png" alt="картинка" width="410" height="270">
 
